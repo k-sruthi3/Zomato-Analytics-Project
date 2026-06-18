@@ -252,7 +252,7 @@ SQL queries were used to answer business-focused questions.
 
 
 ```
-![Zomato Dashboard](Screenshots/Zomato%20dashboard.png)
+![Zomato Dashboard](Screenshots/Zomato_dashboard.png)
 ```
 
 ---
