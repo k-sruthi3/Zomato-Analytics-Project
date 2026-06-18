@@ -339,7 +339,7 @@ Zomato-Analytics-Project
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/ksruthi/Zomato-Analytics-Project.git
+git clone https://github.com/k-sruthi3/Zomato-Analytics-Project.git
 cd Zomato-Analytics-Project
 ```
 
