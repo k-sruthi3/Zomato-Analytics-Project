@@ -251,9 +251,7 @@ SQL queries were used to answer business-focused questions.
 ### Power BI Dashboard
 
 
-```
 ![Zomato Dashboard](Screenshots/Zomato_dashboard.png)
-```
 
 ---
 
