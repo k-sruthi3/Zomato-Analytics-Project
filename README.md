@@ -2,173 +2,376 @@
 
 ## Project Overview
 
-This project analyzes restaurant data from Zomato using Python, SQL (SQLite), and Power BI. The objective is to uncover insights related to restaurant ratings, pricing, cuisines, restaurant types, online ordering, table booking, and restaurant popularity.
+The **Zomato Restaurant Analytics Dashboard** is an end-to-end Data Analytics project developed using **Python, Pandas, NumPy, SQLite, SQL, and Power BI**.
 
-The project follows a complete data analytics workflow including data cleaning, exploratory data analysis (EDA), SQL-based business analysis, and interactive dashboard creation.
+The project analyzes restaurant data to uncover valuable insights related to restaurant ratings, customer preferences, cuisines, pricing patterns, online ordering services, table booking facilities, and restaurant popularity.
+
+The project follows a complete analytics workflow including data cleaning, exploratory data analysis (EDA), SQL-based business analysis, feature engineering, and interactive dashboard development.
+
+---
+
+## Objectives
+
+* Analyze restaurant ratings and customer preferences.
+* Identify the most popular restaurant types and cuisines.
+* Study the impact of online ordering on restaurant ratings.
+* Study the impact of table booking facilities on ratings.
+* Discover high-density restaurant locations.
+* Analyze restaurant pricing patterns.
+* Create a custom popularity metric.
+* Build an interactive dashboard for business decision-making.
 
 ---
 
 ## Project Workflow
 
+```text
 Raw Dataset (CSV)
-↓
+        │
+        ▼
 Data Cleaning (Pandas)
-↓
+        │
+        ▼
 Feature Engineering
-↓
-Store Cleaned Data in SQLite
-↓
-SQL Business Analysis
-↓
-Data Visualization (Matplotlib & Seaborn)
-↓
+        │
+        ▼
+SQLite Database
+        │
+        ▼
+SQL Analysis
+        │
+        ▼
+Data Visualization
+        │
+        ▼
 Power BI Dashboard
+```
 
 ---
 
-## Technologies Used
+##  Technologies Used
+
+### Programming & Analysis
 
 * Python
 * Pandas
 * NumPy
-* SQLite
-* SQL
 * Matplotlib
 * Seaborn
-* Power BI
 * Jupyter Notebook
 
----
+### Database
 
-## Dataset Information
+* SQLite
+* SQL
 
-* Total Restaurants Analyzed: 6,984
-* Dataset Source: Zomato Restaurant Dataset
-* Features Analyzed:
+### Business Intelligence
 
-  * Restaurant Name
-  * Restaurant Type
-  * Cuisine Type
-  * Area
-  * Rating
-  * Number of Ratings
-  * Average Cost for Two
-  * Online Ordering
-  * Table Booking
+* Power BI
+
+### Version Control
+
+* Git
+* GitHub
 
 ---
 
-## Data Cleaning Steps
+##  Dataset Information
 
-* Removed unnecessary columns
-* Handled missing values
-* Checked for duplicate records
-* Created a cleaned dataset for analysis
-* Exported cleaned data to CSV and SQLite database
+### Dataset Statistics
 
----
+* Original Records: **7,105**
+* Records After Cleaning: **6,984**
+* Features Used: **10**
 
-## SQL Analysis Performed
+### Features Analyzed
 
-The cleaned dataset was stored in SQLite and analyzed using SQL queries.
-
-### SQL Business Questions
-
-1. Total number of restaurants
-2. Average restaurant rating
-3. Average cost for two people
-4. Top 10 restaurant areas
-5. Online ordering distribution
-6. Table booking distribution
-7. Average rating by online ordering availability
-8. Average rating by table booking availability
-9. Top restaurant types by average rating
-10. Restaurant types with highest average cost
+* Restaurant Name
+* Restaurant Type
+* Cuisine Type
+* Area
+* Rating
+* Number of Ratings
+* Average Cost for Two People
+* Online Ordering
+* Table Booking
+* Local Address
 
 ---
 
-## Key Insights
+##  Data Cleaning & Preprocessing
 
-* Quick Bites is the most common restaurant type.
-* More than 50% of restaurants offer online ordering.
-* Restaurants with table booking generally receive higher ratings.
-* Certain areas have significantly higher restaurant concentration.
-* Higher-priced restaurant categories tend to maintain better average ratings.
-* Restaurant popularity is strongly influenced by both ratings and review counts.
+The following preprocessing steps were performed:
+
+* Removed unnecessary columns:
+
+  * Unnamed: 0
+  * Unnamed: 0.1
+* Handled missing values.
+* Removed rows containing null values.
+* Identified and removed duplicate records.
+* Verified dataset consistency.
+* Created a cleaned dataset for analysis.
+* Exported cleaned data to CSV and SQLite database.
+
+### Final Dataset
+
+* Total Records: **6,984**
+* Total Features: **10**
 
 ---
 
-## Visualizations
+##  NumPy Statistical Analysis
 
-The project includes:
+NumPy was used to calculate statistical measures for restaurant ratings.
 
-* Rating Distribution
-* Cost Distribution
+### Metrics Calculated
+
+* Mean Rating
+* Median Rating
+* Standard Deviation
+
+These metrics help understand the overall distribution and variability of restaurant ratings.
+
+---
+
+##  Feature Engineering
+
+A custom metric called **Popularity Score** was created.
+
+### Formula
+
+```text
+Popularity Score = Rating × Number of Ratings
+```
+
+### Purpose
+
+The Popularity Score identifies restaurants that are both:
+
+* Highly Rated
+* Widely Reviewed
+
+This metric combines customer satisfaction and customer engagement into a single measure.
+
+---
+
+##  Exploratory Data Analysis (EDA)
+
+The following analyses were performed using Pandas, NumPy, Matplotlib, and Seaborn.
+
+### Restaurant Analysis
+
 * Top Restaurant Types
-* Top Areas
-* Top Cuisines
-* Online Ordering Analysis
-* Table Booking Analysis
-* Cost vs Rating Analysis
-* SQL-Based Business Insights
+* Top Rated Restaurant Categories
+* Top 10 Most Popular Restaurants
+* Restaurant Popularity Analysis
+
+### Customer Service Analysis
+
+* Online Ordering Distribution
+* Table Booking Distribution
+* Average Ratings by Online Ordering Availability
+* Average Ratings by Table Booking Availability
+
+### Location Analysis
+
+* Top Areas by Number of Restaurants
+* Restaurant Density Analysis
+
+### Cuisine Analysis
+
+* Most Popular Cuisines
+
+### Cost Analysis
+
+* Cost Distribution
+* Cost vs Rating Relationship
+* Average Cost by Restaurant Type
+
+---
+
+##  SQLite Database Integration
+
+The cleaned dataset was stored in a SQLite database to demonstrate database management and SQL analytics skills.
+
+### Database Workflow
+
+```text
+Cleaned Dataset
+      │
+      ▼
+SQLite Database
+      │
+      ▼
+SQL Queries
+      │
+      ▼
+Business Insights
+      │
+      ▼
+Visualizations
+```
+
+### Database Table
+
+```sql
+zomato
+```
+
+---
+
+## SQL Analysis
+
+SQL queries were used to answer business-focused questions.
+
+### Business Questions Answered
+
+1. What is the total number of restaurants?
+2. Which areas contain the highest number of restaurants?
+3. What percentage of restaurants offer online ordering?
+4. What percentage of restaurants offer table booking?
+5. How does online ordering affect restaurant ratings?
+6. How does table booking affect restaurant ratings?
+7. Which restaurant types have the highest average ratings?
+8. Which restaurant types have the highest average costs?
+
+### SQL Concepts Used
+
+* SELECT
+* COUNT()
+* AVG()
+* GROUP BY
+* ORDER BY
+* HAVING
+* LIMIT
+
+---
+
+### Power BI Dashboard
+
+
+```
+![Zomato Dashboard](Screenshots/Zomato%20dashboard.png)
+```
 
 ---
 
 ## Power BI Dashboard Features
 
-* KPI Cards
-* Top Restaurant Types
-* Top Areas
-* Top Cuisines
+### KPI Cards
+
+* Total Restaurants
+* Average Rating
+* Average Cost for Two People
+* Restaurants Offering Online Orders
+* Restaurants Offering Table Booking
+
+### Visualizations
+
+* Most Common Restaurant Types
+* Online Ordering Distribution
+* Table Booking Distribution
+* Areas with Highest Restaurant Density
+* Most Popular Cuisines
 * Cost vs Rating Analysis
-* Popularity Score Analysis
-* Interactive Filters and Slicers
+* Top 10 Most Popular Restaurants (Popularity Score)
+
+### Interactive Filters
+
+* Area
+* Restaurant Type
+* Online Order
+* Table Booking
 
 ---
 
-## Project Structure
+##  Key Insights
 
+* Quick Bites is the most common restaurant type.
+* More than 50% of restaurants offer online ordering.
+* Restaurants with table booking generally receive higher ratings.
+* The average restaurant rating is approximately 3.5 out of 5.
+* The average cost for two people is approximately ₹543.
+* Byresandra–Tavarekere–Madiwala contains the highest restaurant concentration.
+* Popular cuisines dominate customer preferences.
+* Restaurants with high ratings and large review counts achieve the highest Popularity Scores.
+* Online ordering contributes significantly to restaurant visibility and customer engagement.
+
+---
+
+##  Skills Demonstrated
+
+* Data Cleaning and Preprocessing
+* Exploratory Data Analysis (EDA)
+* NumPy Statistical Analysis
+* SQL Query Writing
+* SQLite Database Management
+* Feature Engineering
+* Data Visualization
+* Business Insight Generation
+* Power BI Dashboard Development
+* End-to-End Analytics Workflow
+
+---
+
+##  Project Structure
+
+```
 Zomato-Analytics-Project
-
+│
 ├── Dataset
-├── Python Analysis Notebook
 ├── Database
+├── Python Analysis Notebook
+├── Power BI Dashboard
 ├── SQL_Queries
-├── PowerBI Dashboard
-├── Project Reports
+├── Report
 ├── Screenshots
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+```
 
 ---
 
-#Skills Demonstrated
+##  How to Run the Project
 
-Data Cleaning and Preprocessing
-Exploratory Data Analysis (EDA)
-SQL Query Writing
-SQLite Database Management
-Data Visualization
-Feature Engineering
-Business Insight Generation
-Dashboard Development using Power BI
-End-to-End Analytics Workflow
+### Clone the Repository
 
-<!-- How to Run the Project -->
-
-Clone the Repository
+```bash
 git clone <repository-url>
 cd Zomato-Analytics-Project
-Install Dependencies
+```
+
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
-Run the Analysis
-Open Notebook/zomato_analysis.ipynb
-Run all notebook cells
-The cleaned dataset and SQLite database will be generated automatically
-Open PowerBI/Zomato_Dashboard.pbix to view the dashboard
+```
 
+### Run the Analysis
 
-## Conclusion
+1. Open `zomato_analysis.ipynb`
+2. Run all notebook cells.
+3. The cleaned dataset and SQLite database will be generated automatically.
+4. Open `Zomato_Dashboard.pbix` in Power BI Desktop to view the dashboard.
 
-This project demonstrates an end-to-end data analytics workflow by combining Python, SQL, SQLite, and Power BI. The analysis provides valuable insights into restaurant performance, customer preferences, pricing strategies, and location-based opportunities that can support data-driven decision-making.
+---
+
+##  Future Enhancements
+
+* Machine Learning-based rating prediction.
+* Sentiment analysis using customer reviews.
+* Restaurant recommendation system.
+* Geospatial analysis using location coordinates.
+* Real-time dashboard updates.
+
+---
+
+##  Conclusion
+
+The Zomato Restaurant Analytics Dashboard successfully demonstrates a complete end-to-end data analytics workflow using Python, Pandas, NumPy, SQLite, SQL, and Power BI.
+
+The project transforms raw restaurant data into meaningful business insights through data cleaning, statistical analysis, feature engineering, SQL-based querying, visualization, and dashboard reporting.
+
+The findings provide valuable insights into customer preferences, restaurant performance, pricing strategies, and location-based opportunities, supporting data-driven decision-making in the restaurant industry.
